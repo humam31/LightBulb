@@ -1,20 +1,25 @@
-body{
+body {
     margin: 0;
     padding: 0;
     height: 100vh;
     background: black;
-    justify-content: center;
     display: flex;
+    flex-direction: column; /* mobile pe upar niche aayega */
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
-.switch-container{
-    width: 20%;
-    height: 100vh;
+
+.switch-container {
+    width: 80%;   /* mobile ke liye zyada width */
+    max-width: 200px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
-.switch-cover{
+
+.switch-cover {
     background-color: grey;
     height: 150px;
     width: 100px;
@@ -25,97 +30,139 @@ body{
     align-items: center;
     border-radius: 4px;
 }
-.screw{
+
+.screw {
     width: 5px;
     height: 5px;
     border-radius: 50%;
     background: darkgrey;
-
-
 }
-.switch{
+
+.switch {
     width: 60%;
     height: 60%;
-    background-color: linear-gradient(darkgrey,grey);
+    background: linear-gradient(darkgrey, grey);
     border-top: 1px solid black;
     border-left: 1px solid black;
-    border-right: 1px solid black ;
+    border-right: 1px solid black;
     border-bottom: 6px solid darkgrey;
-    
-
+    cursor: pointer;
 }
-.on{
+
+.on {
     background: linear-gradient(grey, darkgrey);
-    border-bottom:1px solid black ;
+    border-bottom: 1px solid black;
     border-top: 6px solid darkgrey;
+}
 
+/* ------------------ Bulb ------------------ */
+.bulb-container {
+    width: 120px;
+    height: auto;
 }
-.bulb-container{
-    height: 100px;
-    width: 50%;
-}
-.wire{
-    height: 220px;
-    width: 10px;
+
+.wire {
+    height: 20vh;
+    width: 8px;
     background: grey;
-    margin: 0px auto;
+    margin: 0 auto;
 }
-.wire-connection{
+
+.wire-connection {
     height: 15px;
-    width:  15px;
+    width: 15px;
     background: dimgrey;
-    margin: 0px auto;
+    margin: -5px auto 0 auto;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    margin-top: -5px;
 }
-.socket-top{
+
+.socket-top {
     height: 20px;
     width: 50px;
     background-color: grey;
-    margin: 0px auto;
+    margin: 0 auto;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     border-bottom: 1px solid black;
-
-
 }
-.socket-bottom{
+
+.socket-bottom {
     height: 25px;
     width: 50px;
     background-color: grey;
-    margin: 0px auto;
-
+    margin: 0 auto;
 }
-.socket-back{
+
+.socket-back {
     width: 50px;
     height: 20px;
     background: grey;
-    margin: 0px auto;
+    margin: -12px auto 0 auto;
     opacity: 0.5;
     border-radius: 50%;
-    margin-top: -12px;
-    
 }
-.bulb-top{
+
+.bulb-top {
     height: 30px;
     width: 46px;
     background-color: lightgrey;
-    margin: 0px auto;
-    margin-top: -10px;
+    margin: -10px auto 0 auto;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
 }
-.bulb-bottom{
+
+.bulb-bottom {
     height: 80px;
     width: 80px;
     background-color: lightgrey;
-    margin: 0px auto;
+    margin: -10px auto 0 auto;
     border-radius: 50%;
-    margin-top: -10px;
 }
-.bulbOn{
+
+.bulbOn {
     background-color: lightyellow;
     box-shadow: 0px 10px 200px 20px lightyellow;
+}
+
+/* ------------------ RESPONSIVE MEDIA QUERIES ------------------ */
+
+/* Tablet */
+@media (min-width: 600px) {
+    body {
+        flex-direction: row; /* side by side */
+    }
+
+    .switch-container {
+        width: 30%;
+    }
+
+    .bulb-container {
+        width: 150px;
+    }
+
+    .bulb-bottom {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .switch-container {
+        width: 20%;
+    }
+
+    .bulb-container {
+        width: 200px;
+    }
+
+    .bulb-bottom {
+        width: 130px;
+        height: 130px;
+    }
+
+    .wire {
+        height: 250px;
+    }
 }
